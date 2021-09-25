@@ -15,6 +15,7 @@
 int main(void) {
 	setbuf(stdout, NULL);
 
+	//estas son las variables utilizadas
 	int opcion;
 	float num1;
 	float num2;
@@ -25,15 +26,19 @@ int main(void) {
 	int factoreoUno;
 	int factoreoDos;
 
+	//un do while para usar las funciones de la calculadora
 	do {
+		//las opciones de la calculadora
 		printf("\n1) Ingresar 1er operando\n");
 		printf("2) Ingresar 2do operando\n");
 		printf("3) Calcular todas las operaciones\n");
 		printf("4) Informar resultados\n");
 		printf("5) salir\n");
 		printf("opcion:\n");
-		scanf("%d", &opcion);
+		scanf("%d", &opcion);//transforma la opcion que elija el usuario a un decimal
 
+		/*este switch es para decirle al programa que hacer segun
+		la opcion(numeros del 1 al 5) que elija el usuario*/
 		switch (opcion) {
 		case 1:
 			scanf("%f", &num1);
@@ -47,6 +52,7 @@ int main(void) {
 
 		case 3:
 
+			//realiza las operaciones
 			suma =sumarNumero(num1, num2);
 			resta = restaNumero(num1, num2);
 			multi = multiNumeros(num1, num2);
@@ -56,6 +62,7 @@ int main(void) {
 			break;
 
 		case 4:
+			//muestra los resultados del case 3
 			imprimirResultado(suma);
 			imprimirResultado(resta);
 			imprimirResultado(multi);
@@ -65,7 +72,7 @@ int main(void) {
 
 		}
 
-	} while (opcion != 5);
+	} while (opcion != 5); //si el usuario preciona el 5 saldrá del do while
 
 
 
